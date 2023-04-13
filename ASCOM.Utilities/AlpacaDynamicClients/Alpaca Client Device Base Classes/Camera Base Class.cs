@@ -1,18 +1,15 @@
-﻿using System;
+﻿using ASCOM.Common.Alpaca;
+using ASCOM.DeviceInterface;
+using RestSharp;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Globalization;
-using System.Net;
 using System.Net.Http;
 using System.Reflection;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using ASCOM.Common.Alpaca;
-using ASCOM.Common.Helpers;
-using ASCOM.DeviceInterface;
-using RestSharp;
-using static ASCOM.Common.Alpaca.AlpacaTools;
 using static ASCOM.DynamicRemoteClients.SharedConstants;
 
 namespace ASCOM.DynamicRemoteClients
@@ -524,7 +521,7 @@ namespace ASCOM.DynamicRemoteClients
             get
             {
                 DynamicClientDriver.SetClientTimeout(client, longDeviceResponseTimeout);
-                return DynamicClientDriver.GetValue<Array>(clientNumber, client, URIBase, TL, AlpacaConstants.IMAGE_ARRAY_METHOD_NAME, imageArrayTransferType, imageArrayCompression, MemberTypes.Property);
+                return DynamicClientDriver.GetValue<Array>(clientNumber, client, URIBase, TL, IMAGE_ARRAY_METHOD_NAME, imageArrayTransferType, imageArrayCompression, MemberTypes.Property);
             }
         }
 
